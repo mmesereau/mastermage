@@ -37,7 +37,7 @@
     </div>
     <div class="row">
       <div class="col-xs-6 col-md-4 search" ng-repeat="card in deck.deck.included" ng-show="card.types[0] === type.name">
-        <p>
+        <p ng-mouseenter="VC.showCard([$index])" ng-mouseleave="VC.hideCard()" ng-click="VC.smallCard([$index])">
           {{card.name}} x {{card.quantity}}
         </p>
       </div>

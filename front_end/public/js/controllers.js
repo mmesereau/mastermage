@@ -14,6 +14,10 @@ app.controller("HomeController", ["HomeService", "$state", "$rootScope", "$windo
     });
   };
 
+  vm.cardDisappear = function() {
+    $("#responsive-cardpic").css("display", "none");
+  }
+
 
   if ($window.localStorage.token) {
     vm.loggedIn = true;
@@ -658,13 +662,19 @@ app.controller("ViewController", ['$http', '$state', '$rootScope', '$window',fun
     });
   };
 
-  vm.showCard = function(index, card, commentIndex) {
+  vm.showCard = function(index) {
     $("#cardpic").attr("src", $rootScope.deck.deck.included[index].editions[0].image_url).css("display", "inline");
   }
 
   vm.hideCard = function() {
     $("#cardpic").css("display", "none");
   };
+
+  vm.smallCard = function(index) {
+    if ($(window).width() < $(window).height()) {
+      $("#responsive-cardpic").attr("src", $rootScope.deck.deck.included[index].editions[0].image_url).css("display", "inline");
+    }
+  }
 
   vm.comment = function() {
     if (!$rootScope.profile) {

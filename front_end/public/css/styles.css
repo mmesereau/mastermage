@@ -38,7 +38,6 @@ h3 {
 
 .body-div {
   height: 80vh;
-  margin-left: 30vh;
 }
 
 .login-div {
@@ -293,4 +292,11 @@ textarea {
 
 #searchbar {
   margin-top: 2vh;
+}
+
+#responsive-cardpic {
+  display: none;
+  position: absolute;
+  height: 80vh;
+  z-index: 1000;
 }

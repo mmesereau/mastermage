@@ -20,8 +20,27 @@
           <h3>The Magic the Gathering Deck Builder</h3>
         </div>
       </div>
+      <div class="hidden-md" ng-controller="HomeController as HC" ng-click="HC.cardDisappear()">
+        <img src="#" alt="./css/cardback.jpg" id="responsive-cardpic"/>
+      </div>
+      <div class="row hidden-md" ng-controller="HomeController as HC">
+        <form class="cardform" ng-submit="HC.search()">
+          <input type="text" id="responsive-searchbar" placeholder="Search for a Card" ng-model="HC.card">
+        </form>
+        <button type="button" ng-click="HC.navigate = !HC.navigate">Navigate</button>
+        <div class="row" ng-show="HC.navigate">
+          <h3 class="edit-deck-button" ui-sref="advanced">Advanced</h3>
+          <h3 class="edit-deck-button" ng-hide="profile.username" ui-sref="login">Log In</h3>
+          <h3 class="edit-deck-button" ng-hide="profile.username" ui-sref="register">Register</h3>
+          <h3 class="edit-deck-button" ui-sref="home">Home</h3>
+          <h3 class="edit-deck-button" ui-sref="public">All Decks</h3>
+          <h3 class="edit-deck-button" ui-sref="new">Add a New Deck</h3>
+          <h3 class="edit-deck-button" ng-show="profile.username" ui-sref="settings">User Settings</h3>
+          <h3 class="edit-deck-button" ng-show="profile.username" ng-click="HC.logout()">Log Out</h3>
+        </div>
+      </div>
       <div class="row">
-        <div class="sidebar col-xs-3" ng-controller="HomeController as HC">
+        <div class="sidebar col-md-3 hidden-sm" ng-controller="HomeController as HC">
           <div class="row">
             <form class="cardform" ng-submit="HC.search()">
               <input type="text" id="searchbar" placeholder="Search for a Card" ng-model="HC.card">
@@ -55,7 +74,7 @@
             <img src="#" alt="./css/cardback.jpg" id="cardpic"/>
           </div>
         </div>
-        <div ui-view class="row body-div col-xs-9"></div>
+        <div ui-view class="body-div col-xs-12 col-md-9 pull-right"></div>
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
