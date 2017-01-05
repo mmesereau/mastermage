@@ -613,6 +613,8 @@ app.controller("ViewController", ['$http', '$state', '$rootScope', '$window',fun
     $state.go("public");
   }
 
+  console.log($rootScope.deck);
+
   vm.stats = false;
   if (!$rootScope.deck.comments) {
     $rootScope.deck.comments = [];
