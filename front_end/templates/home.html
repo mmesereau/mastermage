@@ -1,0 +1,28 @@
+<div ng-show="HC.loggedIn" class="col-xs-12 login-div">
+  <div class="logout col-xs-12">
+    <h4 class="home-button" ng-click="HC.logout()">Log Out</h4>
+  </div>
+  <div class="new-deck-link col-xs-12">
+    <h4 class="home-button" ui-sref="new">Add A New Deck</h4>
+  </div>
+  <div class="row">
+    <h3>Your Decks</h3>
+  </div>
+  <div class="row" ng-repeat="deck in HC.decks">
+    <div class="col-xs-12 col-md-8 home-page-deck">
+      <h5>{{deck.deck.name}}</h5>
+      <h6>{{deck.deck.description}}</h6>
+    </div>
+    <div class="col-xs-12 col-md-4">
+      <button type="button" class="edit-deck-button advanced-search" ng-click="HC.edit([$index])">Edit {{deck.deck.name}}</button>
+    </div>
+  </div>
+</div>
+<div ng-hide="HC.loggedIn" class="col-xs-12 login-div">
+  <div class="login col-xs-12 col-md-6">
+    <h4 class="login-button home-button" ui-sref="login">Log In</h4>
+  </div>
+  <div class="register col-xs-12 col-md-6">
+    <h4 class="register-button home-button" ui-sref="register">Register</h4>
+  </div>
+</div>

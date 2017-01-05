@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Master Mage</title>
+    <link rel="shortcut icon" href="css/logo.ico">
+    <style type="text/css">
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+      display: none;
+    }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css">
+  </head>
+  <body ng-app="MTGApp">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-centered header">
+          <h1>Master Mage</h1>
+          <h3>The Magic the Gathering Deck Builder</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="sidebar col-xs-3" ng-controller="HomeController as HC">
+          <div class="row">
+            <form class="cardform" ng-submit="HC.search()">
+              <input type="text" id="searchbar" placeholder="Search for a Card" ng-model="HC.card">
+            </form>
+          </div>
+          <div class="row">
+            <input type="button" value="Advanced" class="advanced-search edit-deck-button" ui-sref="advanced">
+          </div>
+          <div class="row">
+            <h3 class="edit-deck-button" ng-hide="profile.username" ui-sref="login">Log In</h3>
+          </div>
+          <div class="row">
+            <h3 class="edit-deck-button" ng-hide="profile.username" ui-sref="register">Register</h3>
+          </div>
+          <div class="row">
+            <h3 class="edit-deck-button" ui-sref="home">Home</h3>
+          </div>
+          <div class="row">
+            <h3 class="edit-deck-button" ui-sref="public">All Decks</h3>
+          </div>
+          <div class="row">
+            <h3 class="edit-deck-button" ui-sref="new">Add a New Deck</h3>
+          </div>
+          <div class="row">
+            <h3 class="edit-deck-button" ng-show="profile.username" ui-sref="settings">User Settings</h3>
+          </div>
+          <div class="row">
+            <h3 class="edit-deck-button" ng-show="profile.username" ng-click="HC.logout()">Log Out</h3>
+          </div>
+          <div class="row">
+            <img src="#" alt="./css/cardback.jpg" id="cardpic"/>
+          </div>
+        </div>
+        <div ui-view class="row body-div col-xs-9"></div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+    <script type="text/javascript" src="js/angular-ui-router.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/controllers.js"></script>
+    <script type="text/javascript" src="js/factories.js"></script>
+    <script type="text/javascript" src="js/directives.js"></script>
+    <script type="text/javascript" src="js/services.js"></script>
+     <script type="text/javascript" src="js/jquery-donut.js"></script>
+  </body>
+</html>

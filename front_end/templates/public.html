@@ -1,0 +1,16 @@
+<div class="row">
+  <h1>Top Decks</h1>
+</div>
+<div class="row" ng-repeat="deck in PC.decks">
+  <h3 class="public-button" ng-click="PC.view([$index])">{{deck.deck.name}}</h3>
+  <h3>{{deck.username}}</h3>
+    <div class="col-xs-4">
+      <img class="vote_img" src="./css/upvote.png" ng-click="PC.upvote([$index])" alt="Image Not Found">
+    </div>
+    <div class="col-xs-4">
+      <h6 class="vote_num ng-binding">1</h6>
+    </div>
+    <div class="col-xs-4">
+      <img class="vote_img" src="./css/downvote.png" ng-click="PC.downvote([$index])" alt="Image Not Found">
+    </div>
+</div>

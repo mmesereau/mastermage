@@ -1,0 +1,92 @@
+<div class="row page-header ng-scope">
+  <h3 class="ng-binding">Edit Deck: {{deck.deck.name}}</h3>
+</div>
+<div class="row search ng-scope">
+  <textarea rows="10" cols="40" ng-model="deck.deck.description" ng-keyup="UC.update()"></textarea>
+</div>
+<div class="row search ng-scope">
+  <div class="col-xs-4">
+    <h6 class="edit-deck-button ng-binding" ng-click="UC.deleteDeck()">Delete {{deck.deck.name}}</h6>
+  </div>
+  <div class="col-xs-4">
+    <button type="button" ng-click="UC.public()"><span ng-show="!deck.public">Private</span><span ng-show="deck.public">Public</span></button>
+  </div>
+  <div class="col-xs-4">
+    <h3 class="edit-deck-button" ng-click="UC.showStats()"><span ng-hide="UC.stats">Show</span><span ng-show="UC.stats">Hide</span> Stats</h3>
+  </div>
+</div>
+<div class="row deck-stats" ng-show="UC.stats">
+  <div class="col-xs-12 col-md-4">
+    <div class="col-xs-12 ng-scope ng-hide" ng-repeat="type in deck.stats.types" ng-show="type.quantity > 0">
+      <p class="card ng-binding">
+        {{type.quantity}} {{type.name}}<span ng-show="type.quantity > 1" class="ng-hide">s</span>
+      </p>
+    </div>
+    <div class="col-xs-12">
+      <p class="card ng-binding">
+        Total: 0 cards
+      </p>
+    </div>
+  </div>
+  <div class="col-xs-12 col-md-4">
+    <div class="col-xs-12" ng-repeat="format in deck.stats.formats">
+      <div class="row">
+        <p class="edit-deck-button" ng-click="UC.showLegality(format)">
+          {{format.name}}: <span ng-show="format.legal">Legal</span><span ng-hide="format.legal">Illegal</span>
+        </p>
+      </div>
+      <div class="row" ng-show="format.visible">
+        <p class="card" ng-show="(deck.stats.quantity < 60 && format.name !== 'Commander') || (deck.stats.quantity < 100 && format.name === 'Commander')">
+          This format requires <span ng-show="format.name==='Commander'">100</span><span ng-hide="format.name==='Commander'">a minimum of 60</span> cards in your deck.  Your deck currently has {{deck.stats.quantity}} cards.
+        </p>
+        <p class="edit-deck-button ng-hide" ng-show="format.illegalCards.length" ng-click="UC.makeLegal(format)">
+          Illegal Cards: (Click to move to staging area)
+        </p>
+        <p class="card" ng-repeat="card in format.illegalCards">
+          {{card.name}}
+        </p>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row search ng-scope">
+  <input type="text" ng-keyup="UC.search()" placeholder="Add a Card..." ng-model="UC.searchCriteria" class="ng-pristine ng-untouched ng-valid ng-empty">
+  <h3 ng-show="UC.searchResult && UC.searchResult.name !== '_____'" class="advanced-search" ng-click="UC.add_to_staging_area()">{{UC.searchResult.name}}</h3>
+</div>
+<div class="row cards-in-deck ng-scope">
+  <div class="col-xs-12 col-md-5">
+    <h3>Included</h3>
+    <div ng-repeat="card in deck.deck.included" class="ng-scope">
+      <div class="col-xs-12">
+        <h6 class="card ng-binding" ng-mouseover="UC.showCard([$index], 'included')" ng-mouseleave="UC.hideCard()">{{card.name}} x {{card.quantity}}</h6>
+      </div>
+      <div class="col-xs-6">
+        <h6 class="edit-deck-button" ng-click="UC.stage([$index])">Stage</h6>
+      </div>
+      <div class="col-xs-3">
+        <h6 class="edit-deck-button" ng-click="UC.add([$index], 'included')">+</h6>
+      </div>
+      <div class="col-xs-3">
+        <h6 class="edit-deck-button" ng-show="card.quantity > 1" ng-click="UC.subtract([$index], 'included')">-</h6>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-md-5">
+    <h3>Staging Area</h3>
+    <div ng-repeat="card in deck.deck.staging_area" class="ng-scope">
+      <div class="col-xs-12">
+        <h6 class="card ng-binding" ng-mouseover="UC.showCard([$index], 'staging')" ng-mouseleave="UC.hideCard()">{{card.name}} x {{card.quantity}}</h6>
+      </div>
+      <div class="col-xs-6">
+        <h6 class="edit-deck-button" ng-click="UC.include([$index])">Include</h6>
+      </div>
+      <div class="col-xs-3">
+        <h6 class="edit-deck-button" ng-click="UC.add([$index], 'included')">+</h6>
+      </div>
+      <div class="col-xs-3">
+        <h6 class="edit-deck-button" ng-show="card.quantity > 1" ng-click="UC.subtract([$index], 'staging')">-</h6>
+      </div>
+    </div>
+  </div>
+</div>

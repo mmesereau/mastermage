@@ -1,0 +1,16 @@
+<div class="row page-header">
+  <h3>Add a New Deck</h3>
+</div>
+<div class="row">
+  <form class="new-deck-form" ng-submit="NC.add()">
+    <label for="name">Deck Name</label>
+    <br>
+    <input type="text" placeholder="Soul Sisters and Champions" ng-model="NC.deck.name">
+    <br>
+    <label for="description">Deck Description</label>
+    <br>
+    <textarea class="deck-description-box" rows="10" cols="60" name="description" placeholder="This is a green-white deck.  It is very creature heavy, and every creature is centered around +1/+1 counters.  Some creatures heal you, some add +1/+1 counters when you are healed, some give all creatures with +1/+1 counters special abilities." ng-model="NC.deck.description"></textarea>
+    <br>
+    <input type="submit" name="name" value="Create Deck" ng-disabled="!(NC.deck.name && NC.deck.description)">
+  </form>
+</div>

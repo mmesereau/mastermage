@@ -1,0 +1,296 @@
+body {
+  background: url('mtg_background_hydra.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  cursor: url('./cursor2.png') 2000 0, auto;
+}
+
+@font-face {
+  font-family: "MTG";
+  src: url("Planewalker.otf")
+}
+
+h1 {
+  font: 7vh "MTG";
+  width: 100%;
+  color: #F74600;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+h3 {
+  font: 4vh "MTG";
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.header {
+  text-align: center;
+  height: 20vh;
+}
+
+.row {
+  text-align: center;
+}
+
+/*div {
+  border: 1px solid white;
+}*/
+
+.body-div {
+  height: 80vh;
+  margin-left: 30vh;
+}
+
+.login-div {
+  height: 100%;
+  text-align: center;
+}
+
+.home-button {
+  font: 4vh "MTG";
+  color: #982B00;
+}
+
+.home-button:hover {
+  color: red;
+  font-size: 7vh;
+}
+
+form {
+  text-align: center;
+}
+
+.login-form label {
+  font: 10vh "MTG";
+}
+
+.register-form label {
+  font: 6vh "MTG";
+}
+
+.advanced-form label {
+  font: 7vh "MTG";
+}
+
+form label {
+  margin-top: 2%;
+  color: #F74600;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.login-form input {
+  height: 7vh;
+}
+
+.register-form input {
+  height: 4vh;
+}
+
+input {
+  font: 3vh "MTG";
+  margin: 1.5%;
+  width: 50%;
+  background-color: transparent;
+  text-align: center;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  cursor: url('./cursor2.png') 2000 0, auto;
+}
+
+button {
+  font: 3vh "MTG";
+  margin: 1.5%;
+  width: 50%;
+  background-color: transparent;
+  text-align: center;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  cursor: url('./cursor2.png') 2000 0, auto;
+}
+
+form select {
+  font: 3vh "MTG";
+  margin: 1.5%;
+  width: 50%;
+  background-color: transparent;
+  text-align: center;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  cursor: url('./cursor2.png') 2000 0, auto;
+}
+
+.cardform input {
+  width: auto;
+  margin: 0%;
+}
+
+.submit:hover {
+  height: 9vh;
+  font: 4vh "MTG";
+  color: red;
+}
+
+.register-form-invalid {
+  font: 2vh "MTG";
+  color: white;
+}
+
+.login-form-invalid {
+  font: 3vh "MTG";
+  color: white;
+}
+
+.search {
+  text-align: center;
+}
+
+.search h4 {
+  font: 3vh "MTG";
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.search p {
+  font: 2vh "MTG";
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.edit-deck-button {
+  height: 100%;
+  background-color: transparent;
+  font: 3vh "MTG";
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  border: none;
+}
+
+.edit-deck-button:hover {
+  color: red;
+}
+
+.advanced-search:hover {
+  color: red;
+}
+
+.advanced-formats label {
+  font: 3vh "MTG";
+}
+
+.advanced-formats input {
+  height: inherit;
+}
+
+.page-header {
+  text-align: center;
+  margin: 3%;
+  border: none;
+}
+
+
+.advanced-submit-button {
+  margin: 5%;
+  background-color: black;
+}
+
+.deck-description-box {
+  background-color: transparent;
+  font: 3vh "MTG";
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  border: none;
+}
+
+.comment-description-box {
+  background-color: transparent;
+  font: 3vh "MTG";
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+}
+
+.new-deck-form {
+  text-align: center;
+}
+
+.new-deck-form label {
+  font: 4vh "MTG";
+  margin: 1%;
+}
+
+.new-deck-form input {
+  margin: 1%;
+}
+
+.home-page-deck h5 {
+  font: 3vh "MTG";
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.home-page-deck h6 {
+  font: 2vh "MTG";
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.cards-in-deck div {
+  text-align: center;
+}
+
+.card {
+  font: 3vh "MTG";
+  width: 100%;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#cardpic {
+  display: none;
+}
+
+.vote_img {
+  height: 4vh;
+}
+
+.vote_num {
+  font: 4vh "MTG";
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.public-button:hover {
+  color: red;
+}
+
+textarea {
+  background: transparent;
+  font: 3vh "MTG";
+  color: white;
+  text-align: center;
+}
+
+.comment-button button {
+  width: 40%;
+}
+
+.comment-button button:hover {
+  color: red;
+}
+
+.card-comment {
+  color: red;
+}
+
+.buffer {
+  margin-bottom: 1vh;
+  border: 1px solid white;
+}
+
+.sidebar {
+  height: 80vh;
+  width: 30vh;
+  position: fixed;
+}
+
+#searchbar {
+  margin-top: 2vh;
+}

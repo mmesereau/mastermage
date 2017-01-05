@@ -1,0 +1,45 @@
+<div class="row page-header">
+  <h3>Advanced Search:</h3>
+</div>
+<div class="row">
+  <form class="advanced-form" ng-submit="AC.search()">
+    <label for="name">Card Name:</label>
+    <br>
+    <input type="text" name="name" placeholder="e.g. Black Lotus" ng-model="AC.criteria.name">
+    <br>
+    <label for="set">Set: Select Any</label>
+    <br>
+    <select multiple class="set-selector" ng-model="AC.criteria.set">
+      <option ng-repeat="set in AC.options.sets" value="{{set.id}}">{{set.name}}</option>
+    </select>
+    <label for="formats">Formats: Select to Show Only Legal Cards for This Format</label>
+    <div class="col-xs-12 advanced-formats" ng-repeat="format in AC.options.format">
+      <button class="advanced-toggle-button" type="button" ng-click="AC.criteria.format[$index] = !AC.criteria.format[$index]">{{format}}<span ng-show="AC.criteria.format[$index]"> (Selected)</span></button>
+    </div>
+    <label for="types">Card Type: Select Any</label>
+    <br>
+    <select multiple class="set-selector" ng-model="AC.criteria.type">
+      <option ng-repeat="type in AC.options.types" value="{{type}}">{{type}}</option>
+    </select>
+    <br>
+    <label for="oracle">Oracle Text:</label>
+    <br>
+    <input type="text" placeholder="First Strike, Vigilance, Lifelink, Deathtouch" ng-model="AC.criteria.oracle">
+    <br>
+    <label for="colors">Colors:</label>
+    <br>
+    <div class="col-xs-12 advanced-formats" ng-repeat="color in AC.options.colors">
+      <button type="button" ng-click="AC.colorSwitch([$index])" id="color{{color}}">{{color}}</button>
+    </div>
+    <div class="advanced-formats" ng-show="AC.multicolor">
+      <button type="button" ng-click="AC.criteria.allcolors[0] = !AC.criteria.allcolors[0]">Only Show All Colors Selected<span ng-show="AC.criteria.allcolors[0]"> (Selected)</span></button>
+    </div>
+    <br>
+    <label for="rarity">Rarity</label>
+    <div class="col-xs-12 advanced-formats" ng-repeat="rarity in AC.options.rarity">
+      <button type="button" class="advanced-toggle-button" ng-click="AC.criteria.rarity[$index] = !AC.criteria.rarity[$index]">{{rarity}}<span ng-show="AC.criteria.rarity[$index]"> (Selected)</span></button>
+    </div>
+    <br>
+    <input type="submit" class="advanced-submit-button" value="Search">
+  </form>
+</div>

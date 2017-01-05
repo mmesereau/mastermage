@@ -1,0 +1,58 @@
+<div class="search row" ng-repeat="card in searchResults">
+  <div class="col-xs-12 col-md-4">
+    <img src="{{card.editions[0].image_url}}" class="card-image" alt="Image Not Found" />
+  </div>
+  <div class="col-xs-12 col-md-8">
+    <div class="row">
+      <h4>{{card.name}}</h4>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <div class="row">
+          <p>
+            {{card.types[0]}}
+          </p>
+        </div>
+        <div class="row">
+          <p>
+            {{card.text}}
+          </p>
+        </div>
+        <div class="row">
+          <p>
+            {{card.cost}}
+          </p>
+        </div>
+        <div class="row">
+          <p>
+            <span ng-repeat="color in card.colors">{{color}}<span ng-if="$index < card.colors.length - 1">, </span></span>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <div class="row">
+          <p>Edition<span ng-if="card.editions.length !== 1">s</span>:
+            <span ng-repeat="set in card.editions">{{set.set}}<span ng-if="$index < card.editions.length - 1">, </span></span>
+          </p>
+        </div>
+        <div class="row">
+          <p>
+            Commander: <span ng-if="card.formats.commander">Yes</span><span ng-if="!card.formats.commander">No</span>
+          </p>
+          <p>
+            Standard: <span ng-if="card.formats.standard">Yes</span><span ng-if="!card.formats.standard">No</span>
+          </p>
+          <p>
+            Modern: <span ng-if="card.formats.modern">Yes</span><span ng-if="!card.formats.modern">No</span>
+          </p>
+          <p>
+            Vintage: <span ng-if="card.formats.vintage">Yes</span><span ng-if="!card.formats.vintage">No</span>
+          </p>
+          <p>
+            Legacy: <span ng-if="card.formats.legacy">Yes</span><span ng-if="!card.formats.legacy">No</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<form class="register-form" ng-submit="RC.register()">
+  <label for="username">User Name:</label>
+  <br>
+  <input type="text" placeholder="Master Mage" ng-model="RC.user.username" required ng-keyup="RC.usernameCheck()">
+  <p class="register-form-invalid" ng-show="RC.takenUsername">This User Name is taken.</p>
+  <br>
+  <label for="email">Email Address:</label>
+  <br>
+  <input type="text" placeholder="mastermage@gmail.com" ng-model="RC.user.email" required ng-keyup="RC.emailCheck()">
+  <p class="register-form-invalid" ng-show="RC.takenEmail">There is already an account with this Email address.</p>
+  <p class="register-form-invalid" ng-show="RC.invalidEmail">Please enter a valid email address.</p>
+  <br>
+  <label for="password">Password: 8-12 characters</label>
+  <br>
+  <input type="password" ng-model="RC.user.password" required ng-keyup="RC.passwordCheck()">
+  <p class="register-form-invalid" ng-show="RC.invalidPassword">Your password must be between 8 and 12 characters.</p>
+  <br>
+  <label for="password-repeat">Repeat your Password:</label>
+  <br>
+  <input type="password" ng-model="RC.user.repeat" required>
+  <p class="register-form-invalid" ng-show="RC.user.password && RC.user.repeat !== RC.user.password">Passwords do not match.</p>
+  <br>
+  <input type="submit" class="register" value="Register" ng-disabled="!RC.user.username || !RC.user.email || !RC.user.password || RC.user.repeat !== RC.user.password">
+</form>

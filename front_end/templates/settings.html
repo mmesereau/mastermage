@@ -1,0 +1,23 @@
+<div class="row">
+  <h1 class="ng-binding">Settings for {{profile.username}}</h1>
+</div>
+<div class="row">
+  <h3>Change your Password:</h3>
+</div>
+<div class="row">
+  <input type="password" placeholder="Enter your Existing Password" ng-model="SC.password">
+</div>
+<div class="row">
+  <input type="password" placeholder="Enter your New Password" ng-model="SC.new">
+</div>
+<div class="row">
+  <input type="password" placeholder="Repeat your New Password" ng-model="SC.repeat">
+</div>
+<div class="row" ng-show="SC.new && SC.repeat && SC.new !== SC.repeat">
+  <p class="register-form-invalid">
+    Your passwords do not match.
+  </p>
+</div>
+<div class="row">
+  <input type="button" value="Change your Password" ng-click="SC.changePassword()" ng-disabled="!SC.password || !SC.new || !SC.repeat || SC.new !== SC.repeat" disabled="disabled">
+</div>
