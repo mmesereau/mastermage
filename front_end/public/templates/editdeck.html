@@ -2,7 +2,7 @@
   <h3 class="ng-binding">Edit Deck: {{deck.deck.name}}</h3>
 </div>
 <div class="row search ng-scope">
-  <textarea rows="10" cols="40" ng-model="deck.deck.description" ng-keyup="UC.update()"></textarea>
+  <textarea rows="10" cols="30" ng-model="deck.deck.description" ng-keyup="UC.update()"></textarea>
 </div>
 <div class="row search ng-scope">
   <div class="col-xs-4">
@@ -78,13 +78,16 @@
       <div class="col-xs-12">
         <h6 class="card ng-binding" ng-mouseover="UC.showCard([$index], 'staging')" ng-mouseleave="UC.hideCard()">{{card.name}} x {{card.quantity}}</h6>
       </div>
-      <div class="col-xs-6">
+      <div class="col-xs-4">
         <h6 class="edit-deck-button" ng-click="UC.include([$index])">Include</h6>
       </div>
-      <div class="col-xs-3">
+      <div class="col-xs-4">
+        <h6 class="edit-deck-button" ng-click="UC.remove([$index])">Remove</h6>
+      </div>
+      <div class="col-xs-2">
         <h6 class="edit-deck-button" ng-click="UC.add([$index], 'included')">+</h6>
       </div>
-      <div class="col-xs-3">
+      <div class="col-xs-2">
         <h6 class="edit-deck-button" ng-show="card.quantity > 1" ng-click="UC.subtract([$index], 'staging')">-</h6>
       </div>
     </div>

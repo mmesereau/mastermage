@@ -4,6 +4,11 @@ app.controller("HomeController", ["HomeService", "$state", "$rootScope", "$windo
   var vm = this;
   vm.$state = $state;
 
+  if ($(window).width() < $(window).height()) {
+    $("body").css("background", "url('./css/jace.jpg')");
+    $("body").css("background-attachment", "fixed");
+  }
+
   vm.getDecks = function() {
     $http.post("https://mastermage.herokuapp.com/deck/find", $rootScope.profile)
     .then(function(data) {

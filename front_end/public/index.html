@@ -10,6 +10,7 @@
     }
     </style>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/styles.css">
   </head>
   <body ng-app="MTGApp">
@@ -23,7 +24,7 @@
       <div class="hidden-md" ng-controller="HomeController as HC" ng-click="HC.cardDisappear()">
         <img src="#" alt="./css/cardback.jpg" id="responsive-cardpic"/>
       </div>
-      <div class="row hidden-md" ng-controller="HomeController as HC">
+      <div class="row hidden-md hidden-lg hidden-xl" ng-controller="HomeController as HC">
         <form class="cardform" ng-submit="HC.search()">
           <input type="text" id="responsive-searchbar" placeholder="Search for a Card" ng-model="HC.card">
         </form>

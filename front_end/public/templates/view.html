@@ -61,7 +61,7 @@
     <button type="button" name="button">Delete Comment</button>
   </div>
   <form ng-show="VC.editor === $index">
-    <textarea class="comment-description-box" name="name" rows="8" cols="40" ng-model="comment.content"></textarea>
+    <textarea class="comment-description-box" name="name" rows="8" cols="30" ng-model="comment.content"></textarea>
     <br>
     <input type="button" value="Edit" ng-click="VC.edit($index)">
   </form>
@@ -70,7 +70,7 @@
   <h3 class="edit-deck-button" ng-click="VC.comment()">Add a Comment</h3>
 </div>
 <form ng-show="VC.commentForm">
-  <textarea class="comment-description-box" name="name" rows="8" cols="40" ng-model="VC.newComment"></textarea>
+  <textarea class="comment-description-box" name="name" rows="8" cols="30" ng-model="VC.newComment"></textarea>
   <br>
   <input type="button" value="Submit Comment" ng-click="VC.addComment()">
   <input type="button" value="Cancel" ng-click="VC.cancel()">
